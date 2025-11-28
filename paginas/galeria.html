@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Galería de Superhéroes</h1>
+</header>
+
+<main class="galeria-contenedor">
+
+    <!-- Tarjeta 1 -->
+    <div class="card anim1">
+        <img src="../statics/images/foto1.jpg" alt="Superman">
+        <h3>Superman</h3>
+        <p>El último hijo de Krypton.</p>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="card anim2">
+        <img src="../statics/images/foto1.jpg" alt="Batman">
+        <h3>Batman</h3>
+        <p>El Caballero de la Noche.</p>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card anim3">
+        <img src="../statics/images/foto1.jpg" alt="Flash">
+        <h3>Flash</h3>
+        <p>El hombre más rápido del mundo.</p>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="card anim4">
+        <img src="../statics/images/foto1.jpg" alt="Wonder Woman">
+        <h3>Wonder Woman</h3>
+        <p>Princesa amazona y guerrera increíble.</p>
+    </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="card anim5">
+        <img src="../statics/images/foto1.jpg" alt="Tornado Rojo">
+        <h3>Tornado Rojo</h3>
+        <p>El androide héroe del viento y la fuerza.</p>
+    </div>
+
+    <!-- Tarjeta 6 -->
+    <div class="card anim6">
+        <img src="../statics/images/foto1.jpg" alt="Green Arrow">
+        <h3>Green Arrow</h3>
+        <p>El arquero esmeralda y vigilante urbano.</p>
+    </div>
+
+</main>
+
+<footer class="footer">
+    © Eduardo Aranda - <span id="fecha"></span>
+</footer>
+
+<script>
+    // Colocar fecha actual automáticamente
+    document.getElementById("fecha").textContent = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>

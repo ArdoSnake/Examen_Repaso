@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML básico — ArdoBook</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <style>
+    /* Pequeños ajustes locales para la página de HTML básico */
+    .example {
+      padding: 14px;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 16px rgba(16,24,40,0.04);
+      margin-bottom: 16px;
+    }
+    pre.code {
+      background:#0f1724;
+      color:#e6eef8;
+      padding:12px;
+      border-radius:8px;
+      overflow:auto;
+      font-size:13px;
+      line-height:1.45;
+    }
+    .label {
+      display:inline-block;
+      font-size:13px;
+      color:var(--muted, #6b7280);
+      margin-bottom:8px;
+    }
+    .mini-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1 class="brand">ArdoBook</h1>
+    <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="main-nav" class="nav">
+  <a href="../index.html" class="nav-link">Inicio</a>
+  <a href="html_basico.html" class="nav-link">HTML básico</a>
+  <a href="productos.html" class="nav-link">Productos</a>
+  <a href="galeria.html" class="nav-link">Galería</a>
+  <a href="operaciones.html" class="nav-link">Operaciones</a>
+  <a href="multimedia.html" class="nav-link">Multimedia</a>
+  <a href="redsocial.html" class="nav-link">Red social</a>
+  <a href="noticias.html" class="nav-link">Noticias</a>
+</nav>
+
+<main class="contenedor">
+  <h2>HTML básico — ejemplos y explicaciones</h2>
+
+  <section class="example">
+    <div class="label">Encabezados y párrafos</div>
+    <div class="mini-grid">
+      <div>
+        <strong>Resultado:</strong>
+        <h1>Este es un &lt;h1&gt;</h1>
+        <h2>Este es un &lt;h2&gt;</h2>
+        <p>Este es un párrafo (&lt;p&gt;). Los párrafos organizan texto en bloques. Aquí un texto de ejemplo para ver el espaciado y la tipografía.</p>
+      </div>
+      <div>
+        <strong>Código:</strong>
+        <pre class="code">&lt;h1&gt;Este es un &lt;h1&gt;&lt;/h1&gt;
+&lt;h2&gt;Este es un &lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;Este es un párrafo (&lt;p&gt;).&lt;/p&gt;</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="label">Enlaces e imágenes</div>
+    <div class="mini-grid">
+      <div>
+        <strong>Resultado:</strong>
+        <p>Visita <a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener">MDN Web Docs</a> para aprender más.</p>
+        <figure style="margin:0">
+          <img src="../statics/images/sample.jpg" alt="Ejemplo imagen" style="width:100%;max-width:320px;border-radius:8px">
+          <figcaption class="small" style="margin-top:6px;color:var(--muted)">Figura: imagen de ejemplo</figcaption>
+        </figure>
+      </div>
+      <div>
+        <strong>Código:</strong>
+        <pre class="code">&lt;a href="https://developer.mozilla.org/es/" target="_blank"&gt;MDN Web Docs&lt;/a&gt;
+
+&lt;figure&gt;
+  &lt;img src="statics/images/sample.jpg" alt="Ejemplo imagen"&gt;
+  &lt;figcaption&gt;Figura: imagen de ejemplo&lt;/figcaption&gt;
+&lt;/figure&gt;</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="label">Listas (ordenadas y no ordenadas)</div>
+    <div class="mini-grid">
+      <div>
+        <strong>Resultado:</strong>
+        <ul>
+          <li>Elemento no ordenado A</li>
+          <li>Elemento no ordenado B</li>
+        </ul>
+        <ol>
+          <li>Elemento ordenado 1</li>
+          <li>Elemento ordenado 2</li>
+        </ol>
+      </div>
+      <div>
+        <strong>Código:</strong>
+        <pre class="code">&lt;ul&gt;
+  &lt;li&gt;Elemento A&lt;/li&gt;
+  &lt;li&gt;Elemento B&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ol&gt;</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="label">Tabla simple</div>
+    <div class="mini-grid">
+      <div>
+        <strong>Resultado:</strong>
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="background:#f3f4f6">
+              <th style="text-align:left;padding:8px">Nombre</th>
+              <th style="text-align:left;padding:8px">Edad</th>
+              <th style="text-align:left;padding:8px">Rol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px">Ana</td><td style="padding:8px">22</td><td style="padding:8px">Estudiante</td></tr>
+            <tr><td style="padding:8px">Luis</td><td style="padding:8px">19</td><td style="padding:8px">Alumno</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <strong>Código:</strong>
+        <pre class="code">&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Edad&lt;/th&gt;&lt;th&gt;Rol&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;Estudiante&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="label">Formulario simple</div>
+    <div class="mini-grid">
+      <div>
+        <strong>Resultado (funcional):</strong>
+        <form id="demo-form">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input type="text" id="f-name" placeholder="Nombre" style="padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.08)">
+            <input type="email" id="f-email" placeholder="Email" style="padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.08)">
+            <button type="submit" class="btn" style="padding:8px 12px">Enviar</button>
+          </div>
+        </form>
+        <div id="form-result" class="small" style="margin-top:8px;color:var(--muted)"></div>
+      </div>
+      <div>
+        <strong>Código:</strong>
+        <pre class="code">&lt;form id="demo-form"&gt;
+  &lt;input type="text" placeholder="Nombre"&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="example">
+    <div class="label">Etiquetas semánticas</div>
+    <div>
+      <p>HTML5 introdujo etiquetas semánticas como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;footer&gt;</code>. Usarlas mejora la accesibilidad y SEO.</p>
+      <pre class="code">&lt;header&gt;...&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;...&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</pre>
+    </div>
+  </section>
+
+  <p class="small" style="margin-top:18px;color:var(--muted)">Consejo: guarda esta página como referencia al crear las demás páginas del proyecto. Usa la estructura y clases para mantener coherencia visual.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <small id="copyright">Eduardo Aranda — </small>
+    <small>HTML básico · ArdoBook</small>
+  </div>
+</footer>
+
+<!-- Flotador -->
+<div id="floter"></div>
+
+<script>
+  // menú responsive
+  document.getElementById('btn-menu').addEventListener('click', () => {
+    document.getElementById('main-nav').classList.toggle('show');
+  });
+
+  // demo formulario (no envía, solo muestra resultado)
+  document.getElementById('demo-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nombre = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const out = document.getElementById('form-result');
+    if(!nombre || !email){ out.textContent = 'Completa nombre y email.'; return; }
+    out.textContent = `Gracias ${nombre}. Hemos recibido tu email (${email}).`;
+  });
+
+  // Setear fecha y autor (igual en todas las páginas)
+  (function setFecha(){
+    const fecha = new Date();
+    const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+    const f = fecha.toLocaleDateString('es-ES', opciones);
+    const copy = document.getElementById('copyright');
+    const floter = document.getElementById('floter');
+    if(copy) copy.textContent = `Eduardo Aranda — ${f}`;
+    if(floter) floter.textContent = `Eduardo Aranda — ${f}`;
+  })();
+</script>
+</body>
+</html>
