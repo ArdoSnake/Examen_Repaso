@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ArdoBook - Operaciones</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <h1 class="brand">ArdoBook</h1>
+      <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="main-nav" class="nav">
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="html_basico.html" class="nav-link">HTML básico</a>
+    <a href="productos.html" class="nav-link">Productos</a>
+    <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
+    <a href="galeria.html" class="nav-link">Galería</a>
+    <a href="operaciones.html" class="nav-link">Operaciones</a>
+    <a href="matriculacion.html" class="nav-link">Matriculación</a>
+    <a href="multimedia.html" class="nav-link">Multimedia</a>
+    <a href="redsocial.html" class="nav-link">Red social</a>
+    <a href="noticias.html" class="nav-link">Noticias</a>
+  </nav>
+
+  <main class="contenedor">
+    <h2>Operaciones Matemáticas</h2>
+
+    <!-- Calculadora -->
+    <section>
+      <h3>Calculadora básica</h3>
+      <input type="number" id="num1" placeholder="Número 1">
+      <input type="number" id="num2" placeholder="Número 2">
+      <div class="controls">
+        <button class="btn" onclick="calcular('+')">+</button>
+        <button class="btn" onclick="calcular('-')">-</button>
+        <button class="btn" onclick="calcular('*')">*</button>
+        <button class="btn" onclick="calcular('/')">/</button>
+      </div>
+      <p id="resultado">Resultado: -</p>
+    </section>
+
+    <!-- Edad hasta 100 -->
+    <section>
+      <h3>Edad hasta 100 años</h3>
+      <input type="number" id="edadInput" placeholder="Tu edad">
+      <button class="btn" onclick="edadHasta100()">Calcular</button>
+      <p id="edadResultado">Años hasta 100: -</p>
+    </section>
+
+    <!-- Factorial -->
+    <section>
+      <h3>Factorial</h3>
+      <input type="number" id="factInput" placeholder="Número entero ≥ 0">
+      <button class="btn" onclick="factorial()">Calcular</button>
+      <p id="factResultado">Resultado: -</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small id="copyright">Eduardo Aranda — </small>
+      <small>Proyecto final · TP</small>
+    </div>
+  </footer>
+
+  <div id="floter"></div>
+
+  <script src="../js/calculos.js"></script>
+</body>
+</html>

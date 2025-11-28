@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ArdoBook - Imágenes</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1 class="brand">ArdoBook</h1>
+    <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="main-nav" class="nav">
+  <a href="../index.html" class="nav-link">Inicio</a>
+  <a href="html_basico.html" class="nav-link">HTML básico</a>
+  <a href="productos.html" class="nav-link">Productos</a>
+  <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
+  <a href="galeria.html" class="nav-link">Galería</a>
+  <a href="imagenes.html" class="nav-link">Imágenes</a>
+  <a href="operaciones.html" class="nav-link">Operaciones</a>
+  <a href="matriculacion.html" class="nav-link">Matriculación</a>
+</nav>
+
+<main class="contenedor">
+
+  <!-- Nombre y fecha -->
+  <p id="usuarioFecha" class="small"></p>
+
+  <h2>Imágenes Destacadas</h2>
+
+  <section class="galeria-contenedor">
+    <div class="card anim1">
+      <h3>Montaña</h3>
+      <img src="../statics/images/montana.jpg" alt="Montaña">
+      <p>Hermosa vista de una montaña al amanecer.</p>
+    </div>
+    <div class="card anim2">
+      <h3>Río</h3>
+      <img src="../statics/images/rio.jpg" alt="Río">
+      <p>Un río cristalino rodeado de naturaleza.</p>
+    </div>
+    <div class="card anim3">
+      <h3>Playa</h3>
+      <img src="../statics/images/playa.jpg" alt="Playa">
+      <p>Atardecer en la playa con arena blanca.</p>
+    </div>
+    <div class="card anim4">
+      <h3>Ciudad</h3>
+      <img src="../statics/images/ciudad.jpg" alt="Ciudad">
+      <p>Vista panorámica de una ciudad moderna.</p>
+    </div>
+    <div class="card anim5">
+      <h3>Bosque</h3>
+      <img src="../statics/images/bosque.jpg" alt="Bosque">
+      <p>Sendero rodeado de árboles frondosos.</p>
+    </div>
+    <div class="card anim6">
+      <h3>Desierto</h3>
+      <img src="../statics/images/desierto.jpg" alt="Desierto">
+      <p>Dunas infinitas bajo el sol brillante.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <small id="copyright">Eduardo Aranda — </small>
+    <small>Proyecto final · TP</small>
+  </div>
+</footer>
+
+<div id="floter"></div>
+
+<script src="../js/bienvenida.js"></script>
+<script>
+  // Menú responsive
+  const btnMenu = document.getElementById('btn-menu');
+  const nav = document.getElementById('main-nav');
+  btnMenu.addEventListener('click', () => nav.classList.toggle('show'));
+
+  // Mostrar nombre, apellido y fecha
+  const usuarioFecha = document.getElementById('usuarioFecha');
+  const nombre = localStorage.getItem('bien_nombre');
+  const apellido = localStorage.getItem('bien_apellido');
+  const fecha = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  if (nombre && apellido) {
+    usuarioFecha.textContent = `Usuario: ${nombre} ${apellido} — Fecha: ${fecha}`;
+  } else {
+    usuarioFecha.textContent = `Usuario: Invitado — Fecha: ${fecha}`;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ArdoBook - Productos</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1 class="brand">ArdoBook</h1>
+    <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="main-nav" class="nav">
+  <a href="../index.html" class="nav-link">Inicio</a>
+  <a href="html_basico.html" class="nav-link">HTML básico</a>
+  <a href="productos.html" class="nav-link">Productos</a>
+  <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
+  <a href="galeria.html" class="nav-link">Galería</a>
+  <a href="imagenes.html" class="nav-link">Imágenes</a>
+  <a href="operaciones.html" class="nav-link">Operaciones</a>
+  <a href="matriculacion.html" class="nav-link">Matriculación</a>
+</nav>
+
+<main class="contenedor">
+
+  <!-- Nombre y fecha -->
+  <p id="usuarioFecha" class="small"></p>
+
+  <h2>Productos Destacados</h2>
+
+  <section class="galeria-contenedor">
+    <div class="card anim1">
+      <h3>Smartphone X</h3>
+      <img src="../statics/images/smartphone.jpg" alt="Smartphone X">
+      <p>Precio: $499 – Pantalla AMOLED y 128GB.</p>
+    </div>
+    <div class="card anim2">
+      <h3>Audífonos Pro</h3>
+      <img src="../statics/images/audifonos.jpg" alt="Audífonos Pro">
+      <p>Precio: $199 – Cancelación de ruido activa.</p>
+    </div>
+    <div class="card anim3">
+      <h3>Smartwatch 3</h3>
+      <img src="../statics/images/smartwatch.jpg" alt="Smartwatch 3">
+      <p>Precio: $249 – Seguimiento de actividad y salud.</p>
+    </div>
+    <div class="card anim4">
+      <h3>Tablet Z</h3>
+      <img src="../statics/images/tablet.jpg" alt="Tablet Z">
+      <p>Precio: $399 – Pantalla 10 pulgadas y 64GB.</p>
+    </div>
+    <div class="card anim5">
+      <h3>Cámara Pro</h3>
+      <img src="../statics/images/camara.jpg" alt="Cámara Pro">
+      <p>Precio: $599 – Lente 24MP con estabilización óptica.</p>
+    </div>
+    <div class="card anim6">
+      <h3>Drone V</h3>
+      <img src="../statics/images/drone.jpg" alt="Drone V">
+      <p>Precio: $799 – Cámara 4K y control remoto incluido.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <small id="copyright">Eduardo Aranda — </small>
+    <small>Proyecto final · TP</small>
+  </div>
+</footer>
+
+<div id="floter"></div>
+
+<script src="../js/bienvenida.js"></script>
+<script>
+  // menú responsive
+  const btnMenu = document.getElementById('btn-menu');
+  const nav = document.getElementById('main-nav');
+  btnMenu.addEventListener('click', () => nav.classList.toggle('show'));
+
+  // Mostrar nombre, apellido y fecha en la página
+  const usuarioFecha = document.getElementById('usuarioFecha');
+  const nombre = localStorage.getItem('bien_nombre');
+  const apellido = localStorage.getItem('bien_apellido');
+  const fecha = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  if (nombre && apellido) {
+    usuarioFecha.textContent = `Usuario: ${nombre} ${apellido} — Fecha: ${fecha}`;
+  } else {
+    usuarioFecha.textContent = `Usuario: Invitado — Fecha: ${fecha}`;
+  }
+</script>
+</body>
+</html>

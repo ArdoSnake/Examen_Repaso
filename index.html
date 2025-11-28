@@ -28,7 +28,6 @@
     <a href="paginas/multimedia.html" class="nav-link">Multimedia</a>
     <a href="paginas/redsocial.html" class="nav-link">Red social</a>
     <a href="paginas/noticias.html" class="nav-link">Noticias</a>
-    <!-- más enlaces dentro de /paginas/ -->
   </nav>
 
   <main class="contenedor">
@@ -39,7 +38,6 @@
         <p>En este sitio encontrarás ejemplos y ejercicios subidos por secciones: HTML básico, Banco, Galería, Operaciones matemáticas, Formularios y validaciones, Integraciones con APIs (clima, países, Pokémon, Rick & Morty, criptomonedas), multimedia (audio, video y mapas) y una demo de red social con likes y comentarios.</p>
 
         <div id="saludoArea" class="saludoArea" aria-live="polite">
-          <!-- Aquí aparecerá el saludo personalizado por bienvenida.js -->
           <p class="placeholder">Aún no se ha ingresado tu nombre. Haz clic en "Iniciar" para registrarte.</p>
         </div>
 
@@ -57,7 +55,7 @@
           <li><strong>Galería</strong> — grid de imágenes y lightbox.</li>
           <li><strong>Operaciones</strong> — calculadora y ejercicios.</li>
           <li><strong>Formularios</strong> — matriculación y validaciones.</li>
-          <li><strong>APIs</strong> — clima (OpenWeather), países, Pokémon, Rick & Morty, CoinGecko.</li>
+          <li><strong>APIs</strong> — clima, países, Pokémon, Rick & Morty, CoinGecko.</li>
           <li><strong>Multimedia</strong> — mapas, YouTube, mp4 y audio.</li>
           <li><strong>Red social</strong> — likes, comentarios y noticias.</li>
         </ul>
@@ -65,7 +63,6 @@
     </section>
 
     <section class="menu-grid">
-      <!-- botones grandes que llevan a páginas -->
       <a class="card" href="paginas/html_basico.html">HTML básico</a>
       <a class="card" href="paginas/galeria.html">Galería</a>
       <a class="card" href="paginas/operaciones.html">Operaciones</a>
@@ -87,7 +84,6 @@
     <div class="modal-card">
       <h3>Bienvenida</h3>
       <p>Ingresa tu nombre, apellido y edad:</p>
-
       <form id="welcome-form">
         <div class="form-row">
           <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
@@ -96,7 +92,6 @@
         <div class="form-row">
           <input type="number" id="edad" name="edad" placeholder="Edad" min="1" required>
         </div>
-
         <div class="form-actions">
           <button type="submit" class="btn">Guardar</button>
           <button type="button" id="close-modal" class="btn ghost">Cerrar</button>
@@ -109,11 +104,6 @@
   <div id="floter"></div>
 
   <script src="js/bienvenida.js"></script>
-  <script>
-    // menú responsive (simple)
-    const btnMenu = document.getElementById('btn-menu');
-    const nav = document.getElementById('main-nav');
-    btnMenu.addEventListener('click', () => nav.classList.toggle('show'));
-  </script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
