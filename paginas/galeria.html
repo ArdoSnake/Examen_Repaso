@@ -1,71 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Galería — ArdoBook</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <style>
+    /* Ajustes locales (no rompen el CSS global) */
+    .galeria-contenedor {
+      max-width: 1300px;
+      margin: 32px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--card, #fff);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+      padding-bottom: 12px;
+      transition: transform .28s ease, box-shadow .28s ease;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .card h3 { font-size:1.15rem; margin:14px 12px 8px; text-align:center; }
+    .card img { width:100%; height:220px; object-fit:cover; border-radius:10px; }
+    .card p { padding:10px 16px 16px; color:#444; text-align:center; font-size:.95rem; margin:0; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(16,24,40,0.12); }
+
+    /* Animaciones */
+    .anim1:hover { transform: scale(1.04); }
+    .anim2 { animation: flotar 3.2s infinite ease-in-out; }
+    @keyframes flotar { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-6px)} }
+    .anim3:hover { filter: brightness(1.12); }
+    .anim4:hover { transform: rotate(1deg); }
+    .anim5 { animation: fade 4s infinite; }
+    @keyframes fade { 0%,100%{opacity:1} 50%{opacity:.72} }
+    .anim6:hover { transform: scale(1.03) rotate(-1deg); }
+
+    /* footer local */
+    .footer { text-align:center; padding:14px; margin-top:28px; color:var(--muted,#6b7280); }
+    /* responsive minor tweak */
+    @media (max-width:440px){
+      .card img { height:180px; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Galería de Superhéroes</h1>
-</header>
+  <!-- HEADER + HAMBURGER (igual al index) -->
+  <header>
+    <div class="header-inner">
+      <h1 class="brand">ArdoBook</h1>
+      <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<main class="galeria-contenedor">
+  <!-- NAV (desplegable, same behavior across pages) -->
+  <nav id="main-nav" class="nav">
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="html_basico.html" class="nav-link">HTML básico</a>
+    <a href="productos.html" class="nav-link">Productos</a>
+    <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
+    <a href="galeria.html" class="nav-link">Galería</a>
+    <a href="operaciones.html" class="nav-link">Operaciones</a>
+    <a href="multimedia.html" class="nav-link">Multimedia</a>
+    <a href="redsocial.html" class="nav-link">Red social</a>
+    <a href="noticias.html" class="nav-link">Noticias</a>
+  </nav>
 
-    <!-- Tarjeta 1 -->
+  <!-- MAIN: GALERÍA -->
+  <main class="galeria-contenedor" aria-live="polite">
+
     <div class="card anim1">
-        <img src="../statics/images/foto1.jpg" alt="Superman">
-        <h3>Superman</h3>
-        <p>El último hijo de Krypton.</p>
+      <h3>Superman</h3>
+      <img src="../statics/images/foto1.jpg" alt="Superman">
+      <p>El último hijo de Krypton.</p>
     </div>
 
-    <!-- Tarjeta 2 -->
     <div class="card anim2">
-        <img src="../statics/images/foto1.jpg" alt="Batman">
-        <h3>Batman</h3>
-        <p>El Caballero de la Noche.</p>
+      <h3>Batman</h3>
+      <img src="../statics/images/foto1.jpg" alt="Batman">
+      <p>El Caballero de la Noche.</p>
     </div>
 
-    <!-- Tarjeta 3 -->
     <div class="card anim3">
-        <img src="../statics/images/foto1.jpg" alt="Flash">
-        <h3>Flash</h3>
-        <p>El hombre más rápido del mundo.</p>
+      <h3>Flash</h3>
+      <img src="../statics/images/foto1.jpg" alt="Flash">
+      <p>El hombre más rápido del mundo.</p>
     </div>
 
-    <!-- Tarjeta 4 -->
     <div class="card anim4">
-        <img src="../statics/images/foto1.jpg" alt="Wonder Woman">
-        <h3>Wonder Woman</h3>
-        <p>Princesa amazona y guerrera increíble.</p>
+      <h3>Wonder Woman</h3>
+      <img src="../statics/images/foto1.jpg" alt="Wonder Woman">
+      <p>Princesa amazona y guerrera increíble.</p>
     </div>
 
-    <!-- Tarjeta 5 -->
     <div class="card anim5">
-        <img src="../statics/images/foto1.jpg" alt="Tornado Rojo">
-        <h3>Tornado Rojo</h3>
-        <p>El androide héroe del viento y la fuerza.</p>
+      <h3>Tornado Rojo</h3>
+      <img src="../statics/images/foto1.jpg" alt="Tornado Rojo">
+      <p>El androide héroe del viento y la fuerza.</p>
     </div>
 
-    <!-- Tarjeta 6 -->
     <div class="card anim6">
-        <img src="../statics/images/foto1.jpg" alt="Green Arrow">
-        <h3>Green Arrow</h3>
-        <p>El arquero esmeralda y vigilante urbano.</p>
+      <h3>Green Arrow</h3>
+      <img src="../statics/images/foto1.jpg" alt="Green Arrow">
+      <p>El arquero esmeralda y vigilante urbano.</p>
     </div>
 
-</main>
+  </main>
 
-<footer class="footer">
-    © Eduardo Aranda - <span id="fecha"></span>
-</footer>
+  <!-- Footer / flotador -->
+  <footer class="footer">
+    © Eduardo Aranda — <span id="fecha"></span>
+  </footer>
 
-<script>
-    // Colocar fecha actual automáticamente
-    document.getElementById("fecha").textContent = new Date().toLocaleDateString();
-</script>
+  <div id="floter" aria-hidden="true"></div>
 
+  <!-- SCRIPTS: menú + fecha -->
+  <script>
+    // menú responsive (toggle)
+    (function(){
+      const btn = document.getElementById('btn-menu');
+      const nav = document.getElementById('main-nav');
+      if(btn && nav){
+        btn.addEventListener('click', ()=> nav.classList.toggle('show'));
+      }
+    })();
+
+    // fecha en footer y flotador
+    (function(){
+      const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+      const f = new Date().toLocaleDateString('es-ES', opciones);
+      const fechaSpan = document.getElementById('fecha');
+      const floter = document.getElementById('floter');
+      if(fechaSpan) fechaSpan.textContent = f;
+      if(floter){
+        floter.textContent = `Eduardo Aranda — ${f}`;
+        floter.setAttribute('aria-hidden','false');
+      }
+    })();
+  </script>
 </body>
 </html>
