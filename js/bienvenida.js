@@ -1,29 +1,60 @@
 
+// --- NAV: móvil y escritorio ---
 (function(){
   const burger = document.getElementById('burgerBtn');
   const nav = document.getElementById('mainNav');
-  if(burger){
-    burger.addEventListener('click', ()=>{
-      const open = nav.classList.toggle('open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+
+  // Overlay inyectado
+  let overlay = document.querySelector('.nav-overlay');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
   }
-  function enableTouchSubmenus(){
-    const items = document.querySelectorAll('.has-submenu > a');
-    items.forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        if(window.matchMedia('(max-width: 768px)').matches){
-          e.preventDefault();
-          const li = a.parentElement;
-          const open = li.classList.toggle('open');
-          a.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+  function closeAllSubmenus(){
+    document.querySelectorAll('.has-submenu.open').forEach(li=>li.classList.remove('open'));
+    document.querySelectorAll('.has-submenu > a[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false'));
+  }
+
+  function toggleNav(){
+    if(!nav) return;
+    const isOpen = nav.classList.toggle('open');
+    if (burger) burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    overlay.classList.toggle('show', isOpen);
+    if(!isOpen) closeAllSubmenus();
+  }
+
+  if(burger){ burger.addEventListener('click', toggleNav); }
+  overlay.addEventListener('click', ()=>{ if(nav?.classList.contains('open')) toggleNav(); });
+
+  // Submenús táctiles en móvil
+  const parents = document.querySelectorAll('.has-submenu > a');
+  parents.forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      if(!isMobile) return;
+      e.preventDefault();
+      const li = a.parentElement;
+      const willOpen = !li.classList.contains('open');
+
+      // Cerrar hermanos
+      const siblings = li.parentElement?.querySelectorAll('.has-submenu.open') || [];
+      siblings.forEach(sib=>{
+        if(sib!==li){
+          sib.classList.remove('open');
+          const link = sib.querySelector(':scope > a[aria-expanded="true"]');
+          if(link) link.setAttribute('aria-expanded','false');
         }
       });
+
+      li.classList.toggle('open', willOpen);
+      a.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
-  }
-  enableTouchSubmenus();
+  });
 })();
 
+// --- Bienvenida ---
 function saludar(){
   const nombre = document.getElementById('nombre').value.trim();
   const apellido = document.getElementById('apellido').value.trim();
@@ -39,6 +70,7 @@ function saludar(){
   if(out){ out.textContent = saludo; }
 }
 
+// --- Likes con localStorage ---
 (function(){
   const buttons = document.querySelectorAll('[data-like-id]');
   buttons.forEach(btn=>{

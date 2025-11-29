@@ -39,3 +39,13 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 .like{display:inline-flex;align-items:center;gap:.35rem;background:#1a1f2b;color:var(--text);border:1px solid #2a2f45;border-radius:.6rem;padding:.35rem .6rem;cursor:pointer}
 .like[data-active="true"]{background:linear-gradient(90deg,var(--primary),var(--accent));color:#001}
 .badge{display:inline-block;padding:.25rem .5rem;border-radius:.5rem;background:#1a1f2b;color:var(--muted);border:1px solid #2a2f45}
+
+
+/* Overlay para móvil + animación del despliegue */
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:saturate(140%) blur(2px);z-index:40}
+.nav-overlay.show{display:block}
+@media (max-width:768px){
+  .navbar{display:none}
+  .navbar.open{display:block;animation:slideDown .18s ease-out}
+}
+@keyframes slideDown{from{transform:translateY(-6px);opacity:.0}to{transform:translateY(0);opacity:1}}
