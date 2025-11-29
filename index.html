@@ -1,10 +1,25 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ArdoBook - Inicio</title>
   <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    /* Submenús para tu nav */
+    .nav-item { position: relative; display: inline-block; }
+    .nav-link { display: block; color: white; padding: 8px 12px; text-decoration: none; }
+    .nav-link:hover { background-color: #444; }
+    .submenu { display: none; position: absolute; background-color: #444; list-style: none; padding: 0; margin: 0; min-width: 180px; z-index: 1000; }
+    .submenu li a { display: block; color: white; padding: 8px 12px; text-decoration: none; }
+    .submenu li a:hover { background-color: #555; }
+    .nav-item:hover > .submenu { display: block; }
+    @media (max-width: 768px) {
+      #main-nav { flex-direction: column; }
+      .nav-item { width: 100%; }
+      .submenu { position: static; }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,17 +32,75 @@
     </div>
   </header>
 
+  <!-- Menú principal con submenús -->
   <nav id="main-nav" class="nav">
-    <a href="index.html" class="nav-link">Inicio</a>
-    <a href="paginas/html_basico.html" class="nav-link">HTML básico</a>
-    <a href="paginas/productos.html" class="nav-link">Productos</a>
-    <a href="paginas/banco_tabla.html" class="nav-link">Banco (tabla)</a>
-    <a href="paginas/galeria.html" class="nav-link">Galería</a>
-    <a href="paginas/operaciones.html" class="nav-link">Operaciones</a>
-    <a href="paginas/matriculacion.html" class="nav-link">Matriculación</a>
-    <a href="paginas/multimedia.html" class="nav-link">Multimedia</a>
-    <a href="paginas/redsocial.html" class="nav-link">Red social</a>
-    <a href="paginas/noticias.html" class="nav-link">Noticias</a>
+    <div class="nav-item"><a href="index.html" class="nav-link">Inicio</a></div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">HTML básico</a>
+      <ul class="submenu">
+        <li><a href="paginas/html_basico.html">HTML básico</a></li>
+        <li><a href="paginas/productos.html">Productos</a></li>
+        <li><a href="paginas/imagenes.html">Imagenes</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">Banco</a>
+      <ul class="submenu">
+        <li><a href="paginas/banco_tabla.html">Banco (tabla)</a></li>
+        <li><a href="paginas/banco_miembros.html">Banco (miembros)</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item"><a href="paginas/galeria.html" class="nav-link">Galería</a></div>
+    <div class="nav-item"><a href="paginas/operaciones.html" class="nav-link">Operaciones</a></div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">Formularios</a>
+      <ul class="submenu">
+        <li><a href="paginas/matriculacion.html">Matriculación</a></li>
+        <li><a href="paginas/prueba.html">Prueba</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">APIs</a>
+      <ul class="submenu">
+        <li><a href="paginas/clima.html">Clima</a></li>
+        <li><a href="paginas/paises.html">Países</a></li>
+        <li><a href="paginas/pokemon.html">Pokémon</a></li>
+        <li><a href="paginas/rick_morty.html">Rick & Morty</a></li>
+        <li><a href="paginas/criptomonedas.html">Criptomonedas</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">Multimedia</a>
+      <ul class="submenu">
+        <li><a href="paginas/multimedia.html">Mapas</a></li>
+        <li><a href="paginas/multimedia2.html">Videos YouTube</a></li>
+        <li><a href="paginas/multimedia3.html">Videos MP4 + Audio</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">Menús</a>
+      <ul class="submenu">
+        <li><a href="paginas/menu1.html">Menú 1</a></li>
+        <li><a href="paginas/menu2.html">Menú 2</a></li>
+        <li><a href="paginas/menu3.html">Menú 3</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" class="nav-link">Red Social</a>
+      <ul class="submenu">
+        <li><a href="paginas/redsocial.html">Red social</a></li>
+        <li><a href="paginas/comentarios.html">Comentarios</a></li>
+        <li><a href="paginas/noticias.html">Noticias</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main class="contenedor">

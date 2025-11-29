@@ -195,3 +195,72 @@ header{
     font-size: 0.9rem;
 }
 
+/* ------------ BASE DEL MENÚ ------------ */
+.menu { list-style: none; padding: 0; margin: 0; }
+.menu li { position: relative; }
+.menu a { color: #fff; text-decoration: none; display: block; padding: 10px 14px; }
+
+/* ------------ SUBMENÚ ------------ */
+.submenu {
+    display: none;
+    background: #b71c1c;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.submenu li a:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ------------ ESCRITORIO (hover) ------------ */
+@media (min-width: 901px) {
+    .nav-item:hover .submenu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        z-index: 50;
+    }
+
+    /* El toggle invisible usado solo en móviles */
+    .submenu-toggle {
+        display: none;
+    }
+}
+
+/* ------------ MÓVIL (checkbox hack) ------------ */
+@media (max-width: 900px) {
+
+    /* Abrir menú principal */
+    #menu-toggle:checked ~ .nav {
+        display: block;
+    }
+
+    /* Botón invisible para submenú */
+    .submenu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    /* Abrir submenús al hacer tap */
+    #sub1:checked ~ .submenu,
+    #sub2:checked ~ .submenu {
+        display: block;
+    }
+
+    .submenu {
+        position: static;
+        padding-left: 16px;
+    }
+}
