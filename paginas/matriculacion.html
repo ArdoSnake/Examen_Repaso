@@ -69,16 +69,17 @@
     </nav>
   </header>
   <main class="container">
-<section class="section"><h1>HTML básico</h1>
-    <p>Ejemplos de HTML semántico:</p>
-    <h2>Encabezados</h2>
-    <h3>Subtítulo</h3>
-    <p>Texto con <strong>negrita</strong> y <em>cursiva</em>.</p>
-    <h2>Lista</h2>
-    <ul><li>Elemento 1</li><li>Elemento 2</li><li>Elemento 3</li></ul>
-    <h2>Tabla</h2>
-    <table class="table"><thead><tr><th>#</th><th>Nombre</th><th>Detalle</th></tr></thead>
-      <tbody><tr><td>1</td><td>Alpha</td><td>Ejemplo</td></tr><tr><td>2</td><td>Beta</td><td>Ejemplo</td></tr></tbody></table>
+<section class="section"><h1>Matriculación</h1>
+    <div class="grid cols-2">
+      <div class="card">
+        <label class="label">Nombre completo</label><input class="input" id="mNombre">
+        <label class="label">Email</label><input class="input" id="mEmail" type="email">
+        <label class="label">Curso</label>
+        <select class="input" id="mCurso"><option value="">Seleccionar...</option><option>HTML & CSS</option><option>JavaScript</option><option>APIs</option></select>
+        <div style="margin-top:.75rem"><button class="btn" onclick="validarMatricula()">Enviar</button></div>
+      </div>
+      <div class="card"><h3>Estado</h3><p id="mOut">—</p></div>
+    </div>
   </section>
   </main>
   <footer class="site-footer">© Eduardo Aranda — 01/12/2025</footer>

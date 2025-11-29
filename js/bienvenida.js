@@ -1,90 +1,58 @@
-// bienvenida.js
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('modal-welcome');
-  const form = document.getElementById('welcome-form');
-  const openBtn = document.getElementById('open-welcome');
-  const closeBtn = document.getElementById('close-modal');
-  const saludoArea = document.getElementById('saludoArea');
-  const resetBtn = document.getElementById('reset-welcome');
-  const floter = document.getElementById('floter');
 
-  // helper para mostrar fecha en footer y floter
-  const setFecha = () => {
-    const fecha = new Date();
-    const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-    const f = fecha.toLocaleDateString('es-ES', opciones);
-    const copy = document.getElementById('copyright');
-    if(copy) copy.textContent = `Eduardo Aranda — ${f}`;
-    if(floter) floter.textContent = `Eduardo Aranda — ${f}`;
-  };
-
-  setFecha();
-
-  // abrir modal
-  function openModal(){ modal.setAttribute('aria-hidden','false'); }
-  function closeModal(){ modal.setAttribute('aria-hidden','true'); }
-
-  openBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-
-  // Si hay datos guardados, mostrar saludo
-  function mostrarSaludoFromStorage(){
-    const nombre = localStorage.getItem('bien_nombre');
-    const apellido = localStorage.getItem('bien_apellido');
-    const edad = localStorage.getItem('bien_edad');
-
-    if(nombre && apellido && edad){
-      const n = nombre, a = apellido, e = parseInt(edad,10);
-      const mayor = (e >= 20) ? 'Es mayor' : 'Es menor';
-      saludoArea.innerHTML = `<strong>¡Hola ${n} ${a}!</strong><p class="small">${mayor} · Edad: ${e}</p>`;
-      return true;
-    } else {
-      saludoArea.innerHTML = `<p class="placeholder">Aún no se ha ingresado tu nombre. Haz clic en "Iniciar" para registrarte.</p>`;
-      return false;
-    }
+(function(){
+  const burger = document.getElementById('burgerBtn');
+  const nav = document.getElementById('mainNav');
+  if(burger){
+    burger.addEventListener('click', ()=>{
+      const open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   }
-  mostrarSaludoFromStorage();
-
-  // form submit
-  form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellido = document.getElementById('apellido').value.trim();
-    const edad = parseInt(document.getElementById('edad').value,10);
-
-    if(!nombre || !apellido || isNaN(edad) || edad <= 0){
-      alert('Por favor completa todos los campos correctamente.');
-      return;
-    }
-
-    // guardar en localStorage
-    localStorage.setItem('bien_nombre', nombre);
-    localStorage.setItem('bien_apellido', apellido);
-    localStorage.setItem('bien_edad', String(edad));
-
-    mostrarSaludoFromStorage();
-    closeModal();
-  });
-
-  // abrir modal automáticamente si no hay datos
-  if(!localStorage.getItem('bien_nombre')){
-    openModal();
+  function enableTouchSubmenus(){
+    const items = document.querySelectorAll('.has-submenu > a');
+    items.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        if(window.matchMedia('(max-width: 768px)').matches){
+          e.preventDefault();
+          const li = a.parentElement;
+          const open = li.classList.toggle('open');
+          a.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+      });
+    });
   }
+  enableTouchSubmenus();
+})();
 
-  // reset
-  resetBtn.addEventListener('click', () => {
-    localStorage.removeItem('bien_nombre');
-    localStorage.removeItem('bien_apellido');
-    localStorage.removeItem('bien_edad');
-    mostrarSaludoFromStorage();
-    openModal();
+function saludar(){
+  const nombre = document.getElementById('nombre').value.trim();
+  const apellido = document.getElementById('apellido').value.trim();
+  const edadStr = document.getElementById('edad').value.trim();
+  const edad = Number(edadStr);
+  if(!nombre || !apellido || isNaN(edad)){
+    alert('Completá nombre, apellido y edad (número).');
+    return;
+  }
+  const estado = clasificarEdad(edad);
+  const saludo = `Hola ${nombre} ${apellido}, tenés ${edad} años. ${estado}.`;
+  const out = document.getElementById('salidaBienvenida');
+  if(out){ out.textContent = saludo; }
+}
+
+(function(){
+  const buttons = document.querySelectorAll('[data-like-id]');
+  buttons.forEach(btn=>{
+    const id = btn.getAttribute('data-like-id');
+    const key = 'like:' + id;
+    const countEl = btn.querySelector('[data-like-count]');
+    let count = Number(localStorage.getItem(key) || '0');
+    if(countEl) countEl.textContent = String(count);
+    btn.addEventListener('click', ()=>{
+      const active = btn.getAttribute('data-active') === 'true';
+      btn.setAttribute('data-active', active ? 'false' : 'true');
+      count = count + (active ? -1 : 1);
+      localStorage.setItem(key, String(Math.max(count,0)));
+      if(countEl) countEl.textContent = String(Math.max(count,0));
+    });
   });
-});
-
-const btnMenu = document.getElementById('btn-menu');
-const nav = document.getElementById('main-nav');
-
-btnMenu.addEventListener('click', () => {
-    nav.classList.toggle('show');
-});
-
+})();

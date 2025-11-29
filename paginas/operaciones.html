@@ -1,78 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ArdoBook - Operaciones</title>
-  <link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Final — HTML, CSS & APIs</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
-
-  <header>
-    <div class="header-inner">
-      <h1 class="brand">ArdoBook</h1>
-      <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <header class="site-header">
+    <div class="brand">⚡ Proyecto Final</div>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" id="burgerBtn"><span></span><span></span><span></span></button>
+    <nav class="navbar" id="mainNav">
+      <ul class="menu" role="menubar">
+        <li><a href="../index.html" role="menuitem">Inicio</a></li>
+        <li class="has-submenu"><a href="../paginas/html_basico.html" aria-expanded="false" role="menuitem">HTML básico</a>
+          <ul class="submenu">
+            <li><a href="../paginas/html_basico.html">HTML básico</a></li>
+            <li><a href="../paginas/productos.html">Productos</a></li>
+            <li><a href="../paginas/imagenes.html">Imagenes</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/banco_tabla.html" aria-expanded="false" role="menuitem">Banco</a>
+          <ul class="submenu">
+            <li><a href="../paginas/banco_tabla.html">Banco (tabla)</a></li>
+            <li><a href="../paginas/banco_miembros.html">Banco (miembros)</a></li>
+          </ul>
+        </li>
+        <li><a href="../paginas/galeria.html" role="menuitem">Galería</a></li>
+        <li><a href="../paginas/operaciones.html" role="menuitem">Operaciones</a></li>
+        <li class="has-submenu"><a href="../paginas/matriculacion.html" aria-expanded="false" role="menuitem">Formularios</a>
+          <ul class="submenu">
+            <li><a href="../paginas/matriculacion.html">Matriculación</a></li>
+            <li><a href="../paginas/prueba.html">Prueba</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/clima.html" aria-expanded="false" role="menuitem">APIs</a>
+          <ul class="submenu">
+            <li><a href="../paginas/clima.html">Clima</a></li>
+            <li><a href="../paginas/paises.html">Países</a></li>
+            <li><a href="../paginas/pokemon.html">Pokémon</a></li>
+            <li><a href="../paginas/rick_morty.html">Rick & Morty</a></li>
+            <li><a href="../paginas/criptomonedas.html">Criptomonedas</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/multimedia1.html" aria-expanded="false" role="menuitem">Multimedia</a>
+          <ul class="submenu">
+            <li><a href="../paginas/multimedia1.html">Mapas</a></li>
+            <li><a href="../paginas/multimedia2.html">Videos YouTube</a></li>
+            <li><a href="../paginas/multimedia3.html">Videos MP4 + Audio</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/menu1.html" aria-expanded="false" role="menuitem">Menús</a>
+          <ul class="submenu">
+            <li><a href="../paginas/menu1.html">Menú 1</a></li>
+            <li><a href="../paginas/menu2.html">Menú 2</a></li>
+            <li><a href="../paginas/menu3.html">Menú 3</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/redsocial.html" aria-expanded="false" role="menuitem">Red Social</a>
+          <ul class="submenu">
+            <li><a href="../paginas/redsocial.html">Red social</a></li>
+            <li><a href="../paginas/comentarios.html">Comentarios</a></li>
+            <li><a href="../paginas/noticias.html">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </header>
-
-  <nav id="main-nav" class="nav">
-    <a href="../index.html" class="nav-link">Inicio</a>
-    <a href="html_basico.html" class="nav-link">HTML básico</a>
-    <a href="productos.html" class="nav-link">Productos</a>
-    <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
-    <a href="galeria.html" class="nav-link">Galería</a>
-    <a href="operaciones.html" class="nav-link">Operaciones</a>
-    <a href="matriculacion.html" class="nav-link">Matriculación</a>
-    <a href="multimedia.html" class="nav-link">Multimedia</a>
-    <a href="redsocial.html" class="nav-link">Red social</a>
-    <a href="noticias.html" class="nav-link">Noticias</a>
-  </nav>
-
-  <main class="contenedor">
-    <h2>Operaciones Matemáticas</h2>
-
-    <!-- Calculadora -->
-    <section>
-      <h3>Calculadora básica</h3>
-      <input type="number" id="num1" placeholder="Número 1">
-      <input type="number" id="num2" placeholder="Número 2">
-      <div class="controls">
-        <button class="btn" onclick="calcular('+')">+</button>
-        <button class="btn" onclick="calcular('-')">-</button>
-        <button class="btn" onclick="calcular('*')">*</button>
-        <button class="btn" onclick="calcular('/')">/</button>
+  <main class="container">
+<section class="section"><h1>Operaciones</h1>
+    <div class="grid cols-2">
+      <div class="card">
+        <label class="label">Número A</label><input class="input" id="opA" type="number"> 
+        <label class="label">Número B</label><input class="input" id="opB" type="number"> 
+        <label class="label">Operación</label>
+        <select class="input" id="operacion"><option value="suma">Suma</option><option value="resta">Resta</option><option value="mult">Multiplicación</option><option value="div">División</option></select>
+        <div style="margin-top:.75rem"><button class="btn" onclick="calcularDesdeUI()">Calcular</button></div>
       </div>
-      <p id="resultado">Resultado: -</p>
-    </section>
-
-    <!-- Edad hasta 100 -->
-    <section>
-      <h3>Edad hasta 100 años</h3>
-      <input type="number" id="edadInput" placeholder="Tu edad">
-      <button class="btn" onclick="edadHasta100()">Calcular</button>
-      <p id="edadResultado">Años hasta 100: -</p>
-    </section>
-
-    <!-- Factorial -->
-    <section>
-      <h3>Factorial</h3>
-      <input type="number" id="factInput" placeholder="Número entero ≥ 0">
-      <button class="btn" onclick="factorial()">Calcular</button>
-      <p id="factResultado">Resultado: -</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <small id="copyright">Eduardo Aranda — </small>
-      <small>Proyecto final · TP</small>
+      <div class="card"><h3>Resultado</h3><p id="resultado">—</p></div>
     </div>
-  </footer>
-
-  <div id="floter"></div>
-
-  <script src="../js/calculos.js"></script>
+  </section>
+  </main>
+  <footer class="site-footer">© Eduardo Aranda — 01/12/2025</footer>
+  <script src="{JS_PATH}/bienvenida.js"></script>
+  <script src="{JS_PATH}/edad.js"></script>
+  <script src="{JS_PATH}/calculos.js"></script>
+  <script src="{JS_PATH}/apis.js"></script>
+  <script src="{JS_PATH}/formulario_matriculacion.js"></script>
+  <script src="{JS_PATH}/formulario_prueba.js"></script>
 </body>
 </html>

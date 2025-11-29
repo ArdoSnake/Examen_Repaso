@@ -69,16 +69,23 @@
     </nav>
   </header>
   <main class="container">
-<section class="section"><h1>HTML básico</h1>
-    <p>Ejemplos de HTML semántico:</p>
-    <h2>Encabezados</h2>
-    <h3>Subtítulo</h3>
-    <p>Texto con <strong>negrita</strong> y <em>cursiva</em>.</p>
-    <h2>Lista</h2>
-    <ul><li>Elemento 1</li><li>Elemento 2</li><li>Elemento 3</li></ul>
-    <h2>Tabla</h2>
-    <table class="table"><thead><tr><th>#</th><th>Nombre</th><th>Detalle</th></tr></thead>
-      <tbody><tr><td>1</td><td>Alpha</td><td>Ejemplo</td></tr><tr><td>2</td><td>Beta</td><td>Ejemplo</td></tr></tbody></table>
+<section class="section"><h1>Banco (miembros)</h1>
+    <label class="label">Buscar miembro</label>
+    <input class="input" id="buscarMiembro" placeholder="Nombre" oninput="filtrarMiembros()">
+    <div id="miembros" class="grid cols-3">
+      <div class="card" data-name="Ana Pérez"><h3>Ana Pérez</h3><p>Cuenta 001-123</p></div>
+      <div class="card" data-name="Carlos Díaz"><h3>Carlos Díaz</h3><p>Cuenta 002-456</p></div>
+      <div class="card" data-name="Lucía Gómez"><h3>Lucía Gómez</h3><p>Cuenta 003-789</p></div>
+    </div>
+    <script>
+      function filtrarMiembros(){
+        const q = (document.getElementById('buscarMiembro').value||'').toLowerCase();
+        document.querySelectorAll('#miembros .card').forEach(c=>{
+          const n = c.getAttribute('data-name').toLowerCase();
+          c.style.display = n.includes(q) ? '' : 'none';
+        });
+      }
+    </script>
   </section>
   </main>
   <footer class="site-footer">© Eduardo Aranda — 01/12/2025</footer>

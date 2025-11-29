@@ -1,0 +1,1 @@
+function clasificarEdad(edad){if(edad>20)return 'Es mayor';if(edad<20)return 'Es menor';return 'Tiene 20'}

@@ -1,101 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ArdoBook - Productos</title>
-  <link rel="stylesheet" href="../css/estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Final — HTML, CSS & APIs</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <h1 class="brand">ArdoBook</h1>
-    <button id="btn-menu" aria-label="Abrir menú" class="hamburger">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<nav id="main-nav" class="nav">
-  <a href="../index.html" class="nav-link">Inicio</a>
-  <a href="html_basico.html" class="nav-link">HTML básico</a>
-  <a href="productos.html" class="nav-link">Productos</a>
-  <a href="banco_tabla.html" class="nav-link">Banco (tabla)</a>
-  <a href="galeria.html" class="nav-link">Galería</a>
-  <a href="imagenes.html" class="nav-link">Imágenes</a>
-  <a href="operaciones.html" class="nav-link">Operaciones</a>
-  <a href="matriculacion.html" class="nav-link">Matriculación</a>
-</nav>
-
-<main class="contenedor">
-
-  <!-- Nombre y fecha -->
-  <p id="usuarioFecha" class="small"></p>
-
-  <h2>Productos Destacados</h2>
-
-  <section class="galeria-contenedor">
-    <div class="card anim1">
-      <h3>Smartphone X</h3>
-      <img src="../statics/images/smartphone.jpg" alt="Smartphone X">
-      <p>Precio: $499 – Pantalla AMOLED y 128GB.</p>
-    </div>
-    <div class="card anim2">
-      <h3>Audífonos Pro</h3>
-      <img src="../statics/images/audifonos.jpg" alt="Audífonos Pro">
-      <p>Precio: $199 – Cancelación de ruido activa.</p>
-    </div>
-    <div class="card anim3">
-      <h3>Smartwatch 3</h3>
-      <img src="../statics/images/smartwatch.jpg" alt="Smartwatch 3">
-      <p>Precio: $249 – Seguimiento de actividad y salud.</p>
-    </div>
-    <div class="card anim4">
-      <h3>Tablet Z</h3>
-      <img src="../statics/images/tablet.jpg" alt="Tablet Z">
-      <p>Precio: $399 – Pantalla 10 pulgadas y 64GB.</p>
-    </div>
-    <div class="card anim5">
-      <h3>Cámara Pro</h3>
-      <img src="../statics/images/camara.jpg" alt="Cámara Pro">
-      <p>Precio: $599 – Lente 24MP con estabilización óptica.</p>
-    </div>
-    <div class="card anim6">
-      <h3>Drone V</h3>
-      <img src="../statics/images/drone.jpg" alt="Drone V">
-      <p>Precio: $799 – Cámara 4K y control remoto incluido.</p>
+  <header class="site-header">
+    <div class="brand">⚡ Proyecto Final</div>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" id="burgerBtn"><span></span><span></span><span></span></button>
+    <nav class="navbar" id="mainNav">
+      <ul class="menu" role="menubar">
+        <li><a href="../index.html" role="menuitem">Inicio</a></li>
+        <li class="has-submenu"><a href="../paginas/html_basico.html" aria-expanded="false" role="menuitem">HTML básico</a>
+          <ul class="submenu">
+            <li><a href="../paginas/html_basico.html">HTML básico</a></li>
+            <li><a href="../paginas/productos.html">Productos</a></li>
+            <li><a href="../paginas/imagenes.html">Imagenes</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/banco_tabla.html" aria-expanded="false" role="menuitem">Banco</a>
+          <ul class="submenu">
+            <li><a href="../paginas/banco_tabla.html">Banco (tabla)</a></li>
+            <li><a href="../paginas/banco_miembros.html">Banco (miembros)</a></li>
+          </ul>
+        </li>
+        <li><a href="../paginas/galeria.html" role="menuitem">Galería</a></li>
+        <li><a href="../paginas/operaciones.html" role="menuitem">Operaciones</a></li>
+        <li class="has-submenu"><a href="../paginas/matriculacion.html" aria-expanded="false" role="menuitem">Formularios</a>
+          <ul class="submenu">
+            <li><a href="../paginas/matriculacion.html">Matriculación</a></li>
+            <li><a href="../paginas/prueba.html">Prueba</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/clima.html" aria-expanded="false" role="menuitem">APIs</a>
+          <ul class="submenu">
+            <li><a href="../paginas/clima.html">Clima</a></li>
+            <li><a href="../paginas/paises.html">Países</a></li>
+            <li><a href="../paginas/pokemon.html">Pokémon</a></li>
+            <li><a href="../paginas/rick_morty.html">Rick & Morty</a></li>
+            <li><a href="../paginas/criptomonedas.html">Criptomonedas</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/multimedia1.html" aria-expanded="false" role="menuitem">Multimedia</a>
+          <ul class="submenu">
+            <li><a href="../paginas/multimedia1.html">Mapas</a></li>
+            <li><a href="../paginas/multimedia2.html">Videos YouTube</a></li>
+            <li><a href="../paginas/multimedia3.html">Videos MP4 + Audio</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/menu1.html" aria-expanded="false" role="menuitem">Menús</a>
+          <ul class="submenu">
+            <li><a href="../paginas/menu1.html">Menú 1</a></li>
+            <li><a href="../paginas/menu2.html">Menú 2</a></li>
+            <li><a href="../paginas/menu3.html">Menú 3</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="../paginas/redsocial.html" aria-expanded="false" role="menuitem">Red Social</a>
+          <ul class="submenu">
+            <li><a href="../paginas/redsocial.html">Red social</a></li>
+            <li><a href="../paginas/comentarios.html">Comentarios</a></li>
+            <li><a href="../paginas/noticias.html">Noticias</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+<section class="section"><h1>Productos</h1>
+    <div class="grid cols-3">
+      <div class="card"><img src="../statics/images/galeria_1.jpg" alt="Producto 1" class="img" style="width:100%;height:140px;object-fit:cover;border-radius:.6rem"><h3>Producto 1</h3><p>Minimalista y elegante.</p></div>
+      <div class="card"><img src="../statics/images/galeria_2.jpg" alt="Producto 2" class="img" style="width:100%;height:140px;object-fit:cover;border-radius:.6rem"><h3>Producto 2</h3><p>Estilo retro geek.</p></div>
+      <div class="card"><img src="../statics/images/galeria_3.jpg" alt="Producto 3" class="img" style="width:100%;height:140px;object-fit:cover;border-radius:.6rem"><h3>Producto 3</h3><p>Diseño diferente.</p></div>
     </div>
   </section>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <small id="copyright">Eduardo Aranda — </small>
-    <small>Proyecto final · TP</small>
-  </div>
-</footer>
-
-<div id="floter"></div>
-
-<script src="../js/bienvenida.js"></script>
-<script>
-  // menú responsive
-  const btnMenu = document.getElementById('btn-menu');
-  const nav = document.getElementById('main-nav');
-  btnMenu.addEventListener('click', () => nav.classList.toggle('show'));
-
-  // Mostrar nombre, apellido y fecha en la página
-  const usuarioFecha = document.getElementById('usuarioFecha');
-  const nombre = localStorage.getItem('bien_nombre');
-  const apellido = localStorage.getItem('bien_apellido');
-  const fecha = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
-
-  if (nombre && apellido) {
-    usuarioFecha.textContent = `Usuario: ${nombre} ${apellido} — Fecha: ${fecha}`;
-  } else {
-    usuarioFecha.textContent = `Usuario: Invitado — Fecha: ${fecha}`;
-  }
-</script>
+  </main>
+  <footer class="site-footer">© Eduardo Aranda — 01/12/2025</footer>
+  <script src="{JS_PATH}/bienvenida.js"></script>
+  <script src="{JS_PATH}/edad.js"></script>
+  <script src="{JS_PATH}/calculos.js"></script>
+  <script src="{JS_PATH}/apis.js"></script>
+  <script src="{JS_PATH}/formulario_matriculacion.js"></script>
+  <script src="{JS_PATH}/formulario_prueba.js"></script>
 </body>
 </html>
