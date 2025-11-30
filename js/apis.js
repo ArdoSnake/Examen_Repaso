@@ -1,1 +1,0 @@
-// placeholder de utilidades globales
